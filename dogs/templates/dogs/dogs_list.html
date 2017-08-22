@@ -1,0 +1,11 @@
+<h1>dogs</h1>
+<ul>
+    {% for dogs in object_list %}
+    <li>{{ dogs.name }}  ({{ dogs.date }} )
+    <a href="{% url 'dogs:dogs_edit' dogs.id %}">edit</a>
+    <a href="{% url 'dogs:dogs_delete' dogs.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'dogs:dogs_new' %}">New</a>

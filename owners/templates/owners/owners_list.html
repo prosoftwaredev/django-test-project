@@ -1,0 +1,11 @@
+<h1>Owners</h1>
+<ul>
+    {% for owners in object_list %}
+    <li>{{ owners.name }}  ({{ owners.date }} )
+    <a href="{% url 'owners:owners_edit' owners.id %}">edit</a>
+    <a href="{% url 'owners:owners_delete' owners.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'owners:owners_new' %}">New</a>

@@ -1,0 +1,17 @@
+{% extends 'cats/home.html' %}
+
+{% block title %}Cats{% endblock %}
+
+{% block content %}
+<h1>Cats</h1>
+<ul>
+    {% for cats in object_list %}
+    <li>{{ cats.name }}  ({{ cats.date }} )
+    <a href="{% url 'cats:cats_edit' cats.id %}">edit</a>
+    <a href="{% url 'cats:cats_delete' cats.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'cats:cats_new' %}">New</a>
+{% endblock %}
